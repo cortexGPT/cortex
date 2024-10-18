@@ -1,3 +1,5 @@
+import subprocess
+
 def test_lint_and_format_integration():
     """
     Ensure that pylint and black can be run without errors.
