@@ -27,3 +27,4 @@ def test_linter_configuration():
     """
     result = subprocess.run(["pylint", "src/"], capture_output=True)
     assert result.returncode == 0, f"Pylint configuration issues found: {result.stderr.decode()}"
+    
