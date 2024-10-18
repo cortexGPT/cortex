@@ -1,0 +1,15 @@
+import os
+import subprocess
+
+def test_git_branch_structure():
+    """
+    Verify that Git repository has correct branches: main, dev, and feature branches.
+    """
+    subprocess.run(["git", "init"], check=True)
+    subprocess.run(["git", "checkout", "-b", "main"], check=True)
+    subprocess.run(["git", "checkout", "-b", "dev"], check=True)
+    subprocess.run(["git", "checkout", "-b", "feature/test-feature"], check=True)
+    branches = subprocess.run(["git", "branch"], capture_output=True, text=True).stdout.splitlines()
+    assert "main" in branches, "Branch 'main' not found"
+    assert "dev" in branches, "Branch 'dev' not found"
+    assert "feature/test-feature" in branches, "Branch 'feature/test-feature' not found"
