@@ -13,3 +13,4 @@ def test_git_branch_structure():
     assert "main" in branches, "Branch 'main' not found"
     assert "dev" in branches, "Branch 'dev' not found"
     assert "feature/test-feature" in branches, "Branch 'feature/test-feature' not found"
+    
